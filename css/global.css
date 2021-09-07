@@ -1,0 +1,134 @@
+body 
+{
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  display: flex;
+  background-image: url("../images/background.png");
+  font-family: 'Manrope', sans-serif;
+}
+
+html 
+{
+  height: -webkit-fill-available;
+}
+
+nav 
+{
+  display: flex;
+  position: fixed;
+  flex-wrap: nowrap;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+main
+{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.nav-link
+{
+  font-size: large;
+}
+.nav-link:hover
+{
+  background-color: #646a6f;
+}
+
+#dropdownLinks + .dropdown-menu
+{
+  top: -560%;
+  min-width: 11rem;
+}
+
+.nav-item .active
+{
+  background-color: #6c757d !important;
+}
+
+.divider
+{
+  margin: 2vh 0;
+}
+
+#settingupcarousel > .carousel-indicators > button
+{
+  border-radius: 50%;
+  height: 2em;
+  text-indent: unset;
+  color: #4b0000;
+  font-weight: 700;
+  background-color: #6c757d;
+  border-top: 0px;
+}
+
+.bg-dark
+{
+  background-color: #1C1C1C!important;
+}
+
+.kwd
+{
+  color: #3885D2!important;
+}
+
+code.prettyprint, pre.prettyprint 
+{
+  background-color: #1E1E1E!important;
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 
+{
+  list-style-type: decimal!important;
+}
+
+.pln
+{
+  color: #BEB7FF!important;
+}
+
+.typ
+{
+  color: #4ec9b0!important;;
+}
+
+.lit
+{
+  color: #B5CEA8!important;
+}
+.nocode
+{
+  color: #fff!important;
+}
+
+.str
+{
+  color:#D69D85!important;
+}
+
+.var
+{
+ color: #9CDCFE;
+}
+
+.method
+{
+color: #DCDCAA;
+}
+
+.com
+{
+  color: #57A64A!important;
+}
+
+.param
+{
+   color: #999A9A;
+}
+
+.clsMbr
+{
+  color: #DADADA;
+}
