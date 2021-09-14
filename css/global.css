@@ -18,6 +18,7 @@ nav
   flex-wrap: nowrap;
   height: 100vh;
   max-height: 100vh;
+  left: 0%;
 }
 
 main
@@ -130,4 +131,46 @@ color: #DCDCAA;
 .clsMbr
 {
   color: #DADADA;
+}
+
+#btn-send-small
+{
+  display: none;
+}
+
+#btn-nav
+{
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  #btn-send {
+    display: none;
+  }
+
+  #btn-send-small
+  {
+    display: block;
+  }
+
+  #btn-nav
+  {
+    display: block;
+    position: fixed;
+    left: 2%;
+    top: 2%;
+    border: 1px black solid !important;
+  }
+
+  #btn-nav > span
+  {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+  }
+
+  nav
+  {
+    position: fixed !important;
+    left: -100%;
+    z-index: 9000;
+  };
 }

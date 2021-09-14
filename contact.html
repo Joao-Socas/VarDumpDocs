@@ -1,0 +1,47 @@
+<div id="contactbug" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"
+    style="padding-bottom: 25px;">
+    <div class="carousel-inner px-5">
+        <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+                <h1 class="display-5 fw-bold col-12 text-center py-2" style="color: #4b0000;">Report a Bug</h1>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <h1 class="display-5 fw-bold col-12 text-center py-2" style="color: #4b0000;">Contact</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row flex-row-reverse px-5 d-flex justify-content-center">
+    <div class="col-lg-3 d-flex px-3 py-2 flex-column flex-wrap">
+        <div class="gap-3 col-12 d-flex flex-column align-content-start">
+            <a class="btn btn-outline-secondary btn-lg active" id="btn-report" style="padding: 0.8rem 1rem;">Bug Reporting</a>
+            <a class="btn btn-outline-secondary btn-lg" id="btn-contact" style="padding: 0.8rem 1rem;">Contact me</a>
+        </div>
+        <div class="col-12 d-flex flex-column align-content-end align-self-baseline"
+            style="margin-bottom: 15px;margin-top: auto;">
+            <a class="g-recaptcha btn btn-secondary btn-lg align-self-baseline" 
+            id="btn-send" style="padding: 0.8rem 1rem;"
+            data-sitekey="6Ld24mccAAAAAL83bOf30IrKIjZsH7O2jzsadMSn" data-callback="SubmitContact();">Send</a>
+        </div>
+    </div>
+    <div class="col-lg-6 px-3 py-2">
+        <form id="contactform" class="needs-validation" novalidate
+        action="https://formspree.io/f/xdoybkko"
+        method="POST"
+        >
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="replyto" placeholder="none@gmail.com" name="_replyto" required>
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" id="messagebody" rows="15"
+                    name="message" placeholder="Message" required minlength="50"></textarea>
+            </div>
+        </form>
+        <a class="g-recaptcha btn btn-secondary btn-lg align-self-baseline" 
+        id="btn-send-small" style="padding: 0.8rem 1rem;"
+        data-sitekey="6Ld24mccAAAAAL83bOf30IrKIjZsH7O2jzsadMSn" data-callback="SubmitContact();">Send</a>
+    </div>
+</div>
