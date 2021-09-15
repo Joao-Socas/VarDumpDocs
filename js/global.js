@@ -149,28 +149,34 @@ function SetNavLinks()
   $("#comingsoonlink").off("click");
   $("#contactlink").off("click");
 
-  $("#homelink").click(function(){
+  $("#homelink").click(function(event){
+    event.preventDefault();
     $("main").stop().animate({scrollTop:homeposition}, 500, 'swing');
   });
   
-  $("#settinguplink").click(function(){
+  $("#settinguplink").click(function(event){
+    event.preventDefault();
     $("main").stop().animate({scrollTop:settingupposition}, 500, 'swing');
   });
   
-  $("#exampleslink").click(function(){
+  $("#exampleslink").click(function(event){
+    event.preventDefault();
     $("main").stop().animate({scrollTop:examplesposition}, 500, 'swing');
   });
   
-  $("#comingsoonlink").click(function(){
+  $("#comingsoonlink").click(function(event){
+    event.preventDefault();
     $("main").stop().animate({scrollTop:comingsoonposition}, 500, 'swing');
   });
   
-  $("#contactlink").click(function(){
+  $("#contactlink").click(function(event){
+    event.preventDefault();
     $("main").stop().animate({scrollTop:contactposition}, 500, 'swing');
     SetContact(true);
   });
 
-  $("#dropdow-contact").click(function(){
+  $("#dropdow-contact").click(function(event){
+    event.preventDefault();
     $("main").stop().animate({scrollTop:contactposition}, 500, 'swing');
     SetContact(false);
   });
