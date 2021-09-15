@@ -47,6 +47,26 @@ function CheckLoaded()
   if (navloaded && mainloaded) {
     FinishedLoading();
     clearInterval(loadedCheck);
+    $.ajax({
+      url:"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
+      dataType: 'script',
+      async: true
+    });
+
+    $.ajax({
+      url:"https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js",
+      dataType: 'script',
+      data:{
+        lang: "css",
+        skin: "sunburst"
+      },
+      async: true
+    });
+    $.ajax({
+      url:"https://www.google.com/recaptcha/api.js",
+      dataType: 'script',
+      async: true
+    });    
   }
 }
 
