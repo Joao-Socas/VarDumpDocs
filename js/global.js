@@ -5,6 +5,7 @@ var settingupposition;
 var examplesposition;
 var commingsoonposition;
 var contactposition;
+var bugcontact = true;
 loadedCheck = window.setInterval(CheckLoaded,200);
 
 function FinishedLoading()
@@ -34,6 +35,14 @@ function FinishedLoading()
       if ($("nav").css("position") == "fixed") {
         $("nav").animate({left:'-100%'}, 300, 'swing');
       }
+    });
+
+    $("#btn-send").click(function(){
+      SubmitContact();
+    });
+
+    $("#btn-send-small").click(function(){
+      SubmitContact();
     });
 
     $(window).resize(function(){
@@ -83,6 +92,10 @@ function SubmitContact() {
   
   if($("#contactform")[0].checkValidity())
   {
+    $("#replyto").attr("disabled", true);
+    $("#messagebody").attr("disabled", true);
+    $("#btn-send").attr("disabled", true);
+
     $.ajax({
       dataType: 'json',
       data: {
@@ -91,7 +104,22 @@ function SubmitContact() {
       },
       url:"https://formspree.io/f/xdoybkko",
       method: "POST"
-    });
+    })
+    .done(function() {
+      $("#contact-body").addClass("d-none");
+      if(bugcontact)
+      {
+        $("#bug-success").removeClass("d-none");
+      }
+      else
+      {
+        $("#contact-success").removeClass("d-none");
+      }
+    })
+    .fail(function() {
+      $("#contact-body").addClass("d-none");
+      $("#contact-fail").removeClass("d-none");
+    })
   }
   else
   {
@@ -184,6 +212,7 @@ function SetNavLinks()
 
 function SetContact(isbug)
 {
+  bugcontact = isbug
   if (isbug) 
   {
     bootstrap.Carousel.getOrCreateInstance(document.getElementById('contactbug')).to(0);
