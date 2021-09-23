@@ -186,13 +186,13 @@ function SetContact(isbug)
 {
   if (isbug) 
   {
-    bootstrap.Carousel.getInstance(document.getElementById('contactbug')).to(0);
+    bootstrap.Carousel.getOrCreateInstance(document.getElementById('contactbug')).to(0);
     $("#btn-contact").removeClass("active");
     $("#btn-report").addClass("active");
   }
   else
   {
-    bootstrap.Carousel.getInstance(document.getElementById('contactbug')).to(1);
+    bootstrap.Carousel.getOrCreateInstance(document.getElementById('contactbug')).to(1);
     $("#btn-report").removeClass("active");
     $("#btn-contact").addClass("active");
   }
