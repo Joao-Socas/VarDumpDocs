@@ -89,7 +89,7 @@ const getOffsetTop = element => {
 }
 
 function SubmitContact() {
-  
+  var ajaxSuccess = true;
   if($("#contactform")[0].checkValidity())
   {
     $("#replyto").attr("disabled", true);
@@ -106,20 +106,29 @@ function SubmitContact() {
       method: "POST"
     })
     .done(function() {
+      ajaxSuccess = true;
+    })
+    .fail(function() {
+      ajaxSuccess = false;
+    })
+    .always(function() {
       $("#contact-body").addClass("d-none");
-      if(bugcontact)
+      if (ajaxSuccess) 
       {
-        $("#bug-success").removeClass("d-none");
+        if(bugcontact)
+        {
+          $("#bug-success").removeClass("d-none");
+        }
+        else
+        {
+          $("#contact-success").removeClass("d-none");
+        }
       }
       else
       {
-        $("#contact-success").removeClass("d-none");
+        $("#contact-fail").removeClass("d-none");
       }
-    })
-    .fail(function() {
-      $("#contact-body").addClass("d-none");
-      $("#contact-fail").removeClass("d-none");
-    })
+    });
   }
   else
   {
