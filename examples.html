@@ -27,42 +27,42 @@
                         <pre class="prettyprint language-cpp linenums">
 void AUsageExamples::<span class="nocode"><span class="method">BeginPlay()</span></span>
 {
-Super::<span class="nocode"><span class="method">BeginPlay()</span></span>;
+    Super::<span class="nocode"><span class="method">BeginPlay()</span></span>;
 
-int8 <span class="nocode"><span class="var">MyChar</span></span> = 1;
-int32 <span class="nocode"><span class="var">MyInt</span></span> = 21321;
-int64 <span class="nocode"><span class="var">MyLong</span></span> = LONGLONG_MAX;
-bool <span class="nocode"><span class="var">MyBool</span></span> = true;
-FString <span class="nocode"><span class="var">MyFString</span></span> = "My FString";
-FName <span class="nocode"><span class="var">MyFName</span></span> = "My FName";
-FText <span class="nocode"><span class="var">MyText</span></span> = FText::<span class="nocode"><span class="method">FromString</span></span>("My FText");
-<span class="nocode"><span class="kwd">float</span></span> <span class="nocode"><span class="var">MyFloat</span></span> = 0.1234567; // decimal-binary conversion digits may not be precise on string conversion
-double <span class="nocode"><span class="var">MyDouble</span></span> = 0.123456789101112; // decimal-binary conversion digits may not be precise on string conversion
-FVector <span class="nocode"><span class="var">MyFVector</span></span> = FVector(0, 0, 0);
-FVector2D <span class="nocode"><span class="var">MyFVector2D</span></span> = FVector2D(0, 0);
-FVector4 <span class="nocode"><span class="var">MyFVector4</span></span> = FVector4(0, 0, 0, 0);
-FRotator <span class="nocode"><span class="var">MyRotator</span></span> = FRotator(0, 0, 0);
-FQuat <span class="nocode"><span class="var">MyFQuat</span></span> = FQuat(0, 0, 0, 1);
-FTransform <span class="nocode"><span class="var">MyTransform</span></span> = <span class="nocode"><span class="method">GetTransform()</span></span>; 
-TArray&lt;TArray&lt;TArray<span class="nocode">&lt;<span class="typ">int32</span></span>>>> <span class="nocode"><span class="var">MyNestedTarray</span></span>{ {{1,2},{0}}, {{55}} };
+    int8 <span class="nocode"><span class="var">MyChar</span></span> = 1;
+    int32 <span class="nocode"><span class="var">MyInt</span></span> = 21321;
+    int64 <span class="nocode"><span class="var">MyLong</span></span> = LONGLONG_MAX;
+    bool <span class="nocode"><span class="var">MyBool</span></span> = true;
+    FString <span class="nocode"><span class="var">MyFString</span></span> = "My FString";
+    FName <span class="nocode"><span class="var">MyFName</span></span> = "My FName";
+    FText <span class="nocode"><span class="var">MyText</span></span> = FText::<span class="nocode"><span class="method">FromString</span></span>("My FText");
+    <span class="nocode"><span class="kwd">float</span></span> <span class="nocode"><span class="var">MyFloat</span></span> = 0.1234567; // decimal-binary conversion digits may not be precise on string conversion
+    double <span class="nocode"><span class="var">MyDouble</span></span> = 0.123456789101112; // decimal-binary conversion digits may not be precise on string conversion
+    FVector <span class="nocode"><span class="var">MyFVector</span></span> = FVector(0, 0, 0);
+    FVector2D <span class="nocode"><span class="var">MyFVector2D</span></span> = FVector2D(0, 0);
+    FVector4 <span class="nocode"><span class="var">MyFVector4</span></span> = FVector4(0, 0, 0, 0);
+    FRotator <span class="nocode"><span class="var">MyRotator</span></span> = FRotator(0, 0, 0);
+    FQuat <span class="nocode"><span class="var">MyFQuat</span></span> = FQuat(0, 0, 0, 1);
+    FTransform <span class="nocode"><span class="var">MyTransform</span></span> = <span class="nocode"><span class="method">GetTransform()</span></span>; 
+    TArray&lt;TArray&lt;TArray<span class="nocode">&lt;<span class="typ">int32</span></span>>>> <span class="nocode"><span class="var">MyNestedTarray</span></span>{ {{1,2},{0}}, {{55}} };
 
-VARDUMP("My const char*");
-VARDUMP(<span class="nocode"><span class="var">MyChar</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyInt</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyLong</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyBool</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyFString</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyFName</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyText</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyFloat</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyDouble</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyFVector</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyFVector2D</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyFVector4</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyRotator</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyFQuat</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyTransform</span></span>);
-VARDUMP(<span class="nocode"><span class="var">MyNestedTarray</span></span>);
+    VARDUMP("My const char*");
+    VARDUMP(<span class="nocode"><span class="var">MyChar</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyInt</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyLong</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyBool</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyFString</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyFName</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyText</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyFloat</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyDouble</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyFVector</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyFVector2D</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyFVector4</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyRotator</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyFQuat</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyTransform</span></span>);
+    VARDUMP(<span class="nocode"><span class="var">MyNestedTarray</span></span>);
 }</pre>
                     </div>
                 </div>
@@ -105,34 +105,34 @@ VARDUMP(<span class="nocode"><span class="var">MyNestedTarray</span></span>);
                         <pre class="prettyprint language-cpp linenums">
 void AUpdateExample::<span class="nocode"><span class="method">BeginPlay()</span></span>
 {
-Super::<span class="nocode"><span class="method">BeginPlay()</span></span>;
-<span class="nocode"><span class="clsMbr">MyTransform</span></span> = <span class="nocode"><span class="method">GetTransform</span></span>();
-VARDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>);
-VARDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>); // Dumping two times, just the last updates
+    Super::<span class="nocode"><span class="method">BeginPlay()</span></span>;
+    <span class="nocode"><span class="clsMbr">MyTransform</span></span> = <span class="nocode"><span class="method">GetTransform</span></span>();
+    VARDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>);
+    VARDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>); // Dumping two times, just the last updates
 
-bool <span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span> = <span class="nocode"><span class="clsMbr">TogleKeeper</span></span>;
-VARDUMP(<span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span>);
+    bool <span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span> = <span class="nocode"><span class="clsMbr">TogleKeeper</span></span>;
+    VARDUMP(<span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span>);
 }
 
 void AUpdateExample::<span class="nocode"><span class="method">Tick</span></span>(<span class="nocode"><span class="kwd">float</span></span> <span class="nocode"><span class="param">DeltaTime</span></span>)
 {
-Super::<span class="nocode"><span class="method">Tick</span></span>(<span class="nocode"><span class="param">DeltaTime</span></span>);
-FTransform <span class="nocode"><span class="var">NewTransform</span></span> = <span class="nocode"><span class="method">GetTransform</span></span>();
-if (!MyTransform.<span class="nocode"><span class="method">Equals</span></span>(<span class="nocode"><span class="var">NewTransform</span></span>))
-{
-<span class="nocode"><span class="clsMbr">MyTransform</span></span> = <span class="nocode"><span class="var">NewTransform</span></span>;
-UPDATEDUMP(<span class="nocode"><span class="var">MyTransform</span></span>);
-}
+    Super::<span class="nocode"><span class="method">Tick</span></span>(<span class="nocode"><span class="param">DeltaTime</span></span>);
+    FTransform <span class="nocode"><span class="var">NewTransform</span></span> = <span class="nocode"><span class="method">GetTransform</span></span>();
+    if (!MyTransform.<span class="nocode"><span class="method">Equals</span></span>(<span class="nocode"><span class="var">NewTransform</span></span>))
+    {
+        <span class="nocode"><span class="clsMbr">MyTransform</span></span> = <span class="nocode"><span class="var">NewTransform</span></span>;
+        UPDATEDUMP(<span class="nocode"><span class="var">MyTransform</span></span>);
+    }
 
-<span class="nocode"><span class="clsMbr">SecondsCounter</span></span> += <span class="nocode"><span class="param">DeltaTime</span></span>;
-bool <span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span>;
-if (<span class="nocode"><span class="clsMbr">SecondsCounter</span></span> > 4)
-{
-<span class="nocode"><span class="clsMbr">SecondsCounter</span></span> -= 4;
-<span class="nocode"><span class="clsMbr">TogleKeeper</span></span> = !<span class="nocode"><span class="clsMbr">TogleKeeper</span></span>;
-<span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span> = <span class="nocode"><span class="clsMbr">TogleKeeper</span></span>;
-UPDATEDUMP(<span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span>); //Even though updating a local variable, it updates because of the same name of a dump
-}
+    <span class="nocode"><span class="clsMbr">SecondsCounter</span></span> += <span class="nocode"><span class="param">DeltaTime</span></span>;
+    bool <span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span>;
+    if (<span class="nocode"><span class="clsMbr">SecondsCounter</span></span> > 4)
+    {
+        <span class="nocode"><span class="clsMbr">SecondsCounter</span></span> -= 4;
+        <span class="nocode"><span class="clsMbr">TogleKeeper</span></span> = !<span class="nocode"><span class="clsMbr">TogleKeeper</span></span>;
+        <span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span> = <span class="nocode"><span class="clsMbr">TogleKeeper</span></span>;
+        UPDATEDUMP(<span class="nocode"><span class="var">TogleEveryFiveSeconds</span></span>); //Even though updating a local variable, it updates because of the same name of a dump
+    }
 }</pre>
                     </div>
                 </div>
@@ -173,26 +173,24 @@ UPDATEDUMP(<span class="nocode"><span class="var">TogleEveryFiveSeconds</span></
                         <pre class="prettyprint language-cpp linenums">
 void AMultiObjectExample::<span class="nocode"><span class="method">BeginPlay</span></span>()
 {
-Super::<span class="nocode"><span class="method">BeginPlay</span></span>();
-<span class="nocode"><span class="clsMbr">MyTransform</span></span> = <span class="nocode"><span class="method">GetTransform</span></span>();
-FString <span class="nocode"><span class="var">MyActorName</span></span> = <span class="nocode"><span class="method">GetName</span></span>();
-<span class="nocode"><span class="method">DrawDebugString</span></span>(<span class="nocode"><span class="method">GetWorld</span></span>(), <span class="nocode"><span class="clsMbr">MyTransform</span></span>.<span class="nocode"><span class="method">GetLocation</span></span>() + FVector(-80, 0 , 100), <span class="nocode"><span class="var">MyActorName</span></span>, nullptr, FColor::Blue); // #include "DrawDebugHelpers.h"
+    Super::<span class="nocode"><span class="method">BeginPlay</span></span>();
+    <span class="nocode"><span class="clsMbr">MyTransform</span></span> = <span class="nocode"><span class="method">GetTransform</span></span>();
+    FString <span class="nocode"><span class="var">MyActorName</span></span> = <span class="nocode"><span class="method">GetName</span></span>();
+    <span class="nocode"><span class="method">DrawDebugString</span></span>(<span class="nocode"><span class="method">GetWorld</span></span>(), <span class="nocode"><span class="clsMbr">MyTransform</span></span>.<span class="nocode"><span class="method">GetLocation</span></span>() + FVector(-80, 0 , 100), <span class="nocode"><span class="var">MyActorName</span></span>, nullptr, FColor::Blue); // #include "DrawDebugHelpers.h"
 
-TArray<int32> <span class="nocode"><span class="var">NameDumpAddress</span></span> = VARDUMP(<span class="nocode"><span class="var">MyActorName</span></span>);
-<span class="nocode"><span class="clsMbr">TransformDumpAddress</span></span> = VARDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>, <span class="nocode"><span class="var">NameDumpAddress</span></span>);
-
-
+    TArray<int32> <span class="nocode"><span class="var">NameDumpAddress</span></span> = VARDUMP(<span class="nocode"><span class="var">MyActorName</span></span>);
+    <span class="nocode"><span class="clsMbr">TransformDumpAddress</span></span> = VARDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>, <span class="nocode"><span class="var">NameDumpAddress</span></span>);
 }
 
 void AMultiObjectExample::<span class="nocode"><span class="method">Tick</span></span>(<span class="nocode"><span class="kwd">float</span></span> <span class="nocode"><span class="param">DeltaTime</span></span>)
 {
-Super::<span class="nocode"><span class="method">Tick</span></span>(<span class="nocode"><span class="param">DeltaTime</span></span>);
-FTransform <span class="nocode"><span class="var">NewTransform</span></span> = <span class="nocode"><span class="method">GetTransform</span></span>();
-if (!<span class="nocode"><span class="clsMbr">MyTransform</span></span>.<span class="nocode"><span class="method">Equals</span></span>(<span class="nocode"><span class="var">NewTransform</span></span>))
-{
-<span class="nocode"><span class="clsMbr">MyTransform</span></span> = NewTransform;
-UPDATEDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>, <span class="nocode"><span class="clsMbr">TransformDumpAddress</span></span>);
-}
+    Super::<span class="nocode"><span class="method">Tick</span></span>(<span class="nocode"><span class="param">DeltaTime</span></span>);
+    FTransform <span class="nocode"><span class="var">NewTransform</span></span> = <span class="nocode"><span class="method">GetTransform</span></span>();
+    if (!<span class="nocode"><span class="clsMbr">MyTransform</span></span>.<span class="nocode"><span class="method">Equals</span></span>(<span class="nocode"><span class="var">NewTransform</span></span>))
+    {
+        <span class="nocode"><span class="clsMbr">MyTransform</span></span> = NewTransform;
+        UPDATEDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>, <span class="nocode"><span class="clsMbr">TransformDumpAddress</span></span>);
+    }
 }
                         </div>
                     </div>
