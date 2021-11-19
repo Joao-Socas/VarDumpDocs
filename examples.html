@@ -1,5 +1,8 @@
 <h1 class="display-5 fw-bold col-12 text-start px-3" style="color: #4b0000;">Usage examples</h1>
 <div class="accordion px-3" id="accordionExamples">
+
+    <!-- ----------------------------------------------Dump Example----------------------------------------------------- -->
+
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button collapsed text-white bg-dark" type="button" data-bs-toggle="collapse"
@@ -18,9 +21,6 @@
                             For now, only the types listed on the example are compatible
                             (And unsigned versions of integer types). <br />
                             Any other class or structure will show with unknown value.<br /><br />
-                            A functionality for dumping objects is yet to be implemented. See <a
-                                href="#comingsoon">Coming Soon</a>
-                            for more details.
                         </p>
                     </div>
                     <div class="col-lg-8 col-sm-12">
@@ -75,6 +75,9 @@ void AUsageExamples::<span class="nocode"><span class="method">BeginPlay()</span
             </div>
         </div>
     </div>
+
+    <!-- ----------------------------------------------Update Example----------------------------------------------------- -->
+
     <div class="accordion-item">
         <h2 class="accordion-header bg-dark" id="headingTwo">
             <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse"
@@ -145,11 +148,14 @@ void AUpdateExample::<span class="nocode"><span class="method">Tick</span></span
             </div>
         </div>
     </div>
+
+    <!-- ----------------------------------------------MultiInstance Example----------------------------------------------------- -->
+
     <div class="accordion-item">
         <h2 class="accordion-header bg-dark" id="headingThree">
             <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Using Dump Addresses
+                Multiple Instances
             </button>
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
@@ -158,15 +164,12 @@ void AUpdateExample::<span class="nocode"><span class="method">Tick</span></span
                 <div class="flex-row-reverse col-12 d-flex flex-wrap justify-content-center">
                     <div class="col-lg-4 col-sm-12 py-2">
                         <p>
-                            The VARDUMP macro returns a TArray&lt;int32> representing the hierarchical
-                            address relative to the dump.
-                            You can then use this address to add children to a parent dump.<br />
-                            It is pretty useful for dumps of multiple instances of the same class.
-                            <br /><br />
-                            The address can be stored to enable the update of a variable by the it's
-                            relative address, allowing update of multiple variables with the same name.
-
-
+                            The VARDUMP macro returns a pointer to a VarDumpEntry. This means that you can use it to set
+                            a Parent for the dump.
+                            <br><br>
+                            This is useful to differentiate multiple instances of the same base class.<br>
+                            As seen in this example, the label of the actor is used to as a wrapper to differentiate two
+                            actors of the same base class.
                         </p>
                     </div>
                     <div class="col-lg-8 col-sm-12">
@@ -175,11 +178,10 @@ void AMultiObjectExample::<span class="nocode"><span class="method">BeginPlay</s
 {
     Super::<span class="nocode"><span class="method">BeginPlay</span></span>();
     <span class="nocode"><span class="clsMbr">MyTransform</span></span> = <span class="nocode"><span class="method">GetTransform</span></span>();
-    FString <span class="nocode"><span class="var">MyActorName</span></span> = <span class="nocode"><span class="method">GetName</span></span>();
+    FString <span class="nocode"><span class="var">MyActorName</span></span> = <span class="nocode"><span class="method">GetActorLabel</span></span>();
     <span class="nocode"><span class="method">DrawDebugString</span></span>(<span class="nocode"><span class="method">GetWorld</span></span>(), <span class="nocode"><span class="clsMbr">MyTransform</span></span>.<span class="nocode"><span class="method">GetLocation</span></span>() + FVector(-80, 0 , 100), <span class="nocode"><span class="var">MyActorName</span></span>, nullptr, FColor::Blue); // #include "DrawDebugHelpers.h"
 
-    TArray<int32> <span class="nocode"><span class="var">NameDumpAddress</span></span> = VARDUMP(<span class="nocode"><span class="var">MyActorName</span></span>);
-    <span class="nocode"><span class="clsMbr">TransformDumpAddress</span></span> = VARDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>, <span class="nocode"><span class="var">NameDumpAddress</span></span>);
+    <span class="nocode"><span class="clsMbr">TransformDumpAddress</span></span> = VARDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>,  VARDUMP(<span class="nocode"><span class="var">MyActorName</span></span>));
 }
 
 void AMultiObjectExample::<span class="nocode"><span class="method">Tick</span></span>(<span class="nocode"><span class="kwd">float</span></span> <span class="nocode"><span class="param">DeltaTime</span></span>)
@@ -189,21 +191,100 @@ void AMultiObjectExample::<span class="nocode"><span class="method">Tick</span><
     if (!<span class="nocode"><span class="clsMbr">MyTransform</span></span>.<span class="nocode"><span class="method">Equals</span></span>(<span class="nocode"><span class="var">NewTransform</span></span>))
     {
         <span class="nocode"><span class="clsMbr">MyTransform</span></span> = NewTransform;
-        UPDATEDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>, <span class="nocode"><span class="clsMbr">TransformDumpAddress</span></span>);
+        UPDATEDUMP(<span class="nocode"><span class="clsMbr">MyTransform</span></span>);
     }
-}
-                        </div>
+}</pre>
                     </div>
 
                     <div class="col-12 d-flex flex-row px-4 flex-wrap">
                         <p class="col-12">The code above produces the following output:</p>
                         <a href="#" class="pop"><img src="Images/mobjupdateexample.gif"
-                            style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;"
-                            class="col-12"></a>
+                                style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;"
+                                class="col-12"></a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- ----------------------------------------------DumpObject Example------------------------------------------------------->
+
+    <div class="accordion-item">
+        <h2 class="accordion-header bg-dark" id="headingFour">
+            <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Dumping a Object
+            </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#accordionExamples">
+            <div class="accordion-body">
+                <div class="flex-row-reverse col-12 d-flex flex-wrap justify-content-center">
+                    <div class="col-lg-4 col-sm-12 py-2">
+                        <p>
+                            To dump a object, you will need a pointer to the object, an alias for it, and all the properties 
+                            you want to display on the VarDump window.  <br>
+                            For UObjects dumping themselves it's easier since you can use the "this" keyword as the pointer. 
+                            If otherwise you are dumping from another place a default pointer will suffice.<br>
+                            For non UObjects only the Unreal proprietary safe-pointers are allowed (TSharedPtr).
+                            <br><br>
+                            The only downside of dumping a object from outside its scope is that you will not be able to supply 
+                            the private and protected members.
+                            <br><br>
+                            As shown in this example, you can also dump nested objects, just nesting the dump calls.<br>
+                            There is also the possibility to dump a first object and then dumping a second one, with the first one nested.
+                            The plugin will automatic re-parent the first to bellow the second.
+                        </p>
+                    </div>
+                    <div class="col-lg-8 col-sm-12">
+                        <pre class="prettyprint language-cpp linenums">
+void ADumpObjectExample::<span class="nocode"><span class="method">BeginPlay()</span></span>
+{
+    Super::<span class="nocode"><span class="method">BeginPlay()</span></span>;
+    <span class="nocode"><span class="method">GenerateRandomArray</span></span>(<span class="nocode"><span class="clsMbr">RandomArray</span></span>);
+    <span class="nocode"><span class="clsMbr">MyInternalObject</span></span> = TSharedPtr<SomeInternalClass>(new SomeInternalClass); // For dumping objects that are not UObjects you must use a TSharedPtr
+    <span class="nocode"><span class="clsMbr">MyInternalObject->APublicFVector4Member</span></span> = FVector4(0, 0, 0, 0);
+    <span class="nocode"><span class="clsMbr">MyInternalObject->APublicDoubleMember</span></span> = 0;
+    if (<span class="nocode"><span class="clsMbr">MySubobject</span></span>)
+    {
+        VARDUMPOBJECT(this, "Example", <span class="nocode"><span class="clsMbr">UpdatedTimes</span></span>, <span class="nocode"><span class="clsMbr">RandomArray</span></span>, 
+            VARDUMPOBJECT(<span class="nocode"><span class="clsMbr">MySubobject</span></span>, <span class="nocode"><span class="clsMbr">MySubobject</span></span>-><span class="nocode"><span class="method">GetActorLabel()</span></span>, <span class="nocode"><span class="clsMbr">MySubobject->MyTransform</span></span>, <span class="nocode"><span class="clsMbr">MySubobject->SomeString</span></span>), 
+            VARDUMPOBJECT(<span class="nocode"><span class="clsMbr">MyInternalObject</span></span>, "MyInternalObject", <span class="nocode"><span class="clsMbr">MyInternalObject->APublicDoubleMember</span></span>, <span class="nocode"><span class="clsMbr">MyInternalObject->APublicFVector4Member</span></span>)
+        );
+    }
+    else
+    {
+        VARDUMP("You need to attribute a ANestedDumpObject to this Actor->MySubobject");
+    }
+}
+
+void ADumpObjectExample::<span class="nocode"><span class="method">Tick</span></span>(<span class="nocode"><span class="kwd">float</span></span> <span class="nocode"><span class="param">DeltaTime</span></span>)
+{
+    Super::<span class="nocode"><span class="method">Tick</span></span>(<span class="nocode"><span class="param">DeltaTime</span></span>);
+
+    <span class="nocode"><span class="clsMbr">SecondsCounter</span></span> += <span class="nocode"><span class="param">DeltaTime</span></span>;
+    if (<span class="nocode"><span class="clsMbr">SecondsCounter</span></span> > 3)
+    {
+        <span class="nocode"><span class="clsMbr">UpdatedTimes</span></span>++;
+        <span class="nocode"><span class="clsMbr">SecondsCounter</span></span> -= 3;
+        // GenerateRandomArray definition can be seen in the example project
+        <span class="nocode"><span class="method">GenerateRandomArray</span></span>(<span class="nocode"><span class="clsMbr">RandomArray</span></span>);
+        if (<span class="nocode"><span class="clsMbr">MySubobject</span></span>)
+        {
+            UPDATEOBJECTDUMP(this);
+        }
+    }
+    // GenerateRandomDouble definition can be seen in the example project
+    <span class="nocode"><span class="method">GenerateRandomDouble</span></span>(<span class="nocode"><span class="clsMbr">MyInternalObject->APublicDoubleMember</span></span>);
+    UPDATEOBJECTDUMP(<span class="nocode"><span class="clsMbr">MyInternalObject</span></span>); // You can also update just the nested dump
+}</pre>
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-row px-4 flex-wrap">
+                    <p class="col-12">The code above produces the following output:</p>
+                    <a href="#" class="pop"><img src="Images/ObjectDump.gif"
+                            style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" class="col-12"></a>
+                </div>
             </div>
         </div>
     </div>

@@ -9,34 +9,17 @@
     Here are the improvements and new functionalities I'm planning for the near future:
     <br /><br />
 </p>
-<h5 class="col-sm-12 px-5">Improvements:</h5>
-<div class="col-sm-12 px-3">
-    <p class="col-sm-12 px-5"><b>A better background</b> - I now it's hard to read those FStrings and Bools.
-        I'm following the color code from blueprint variables.
-        For now, use the mouse to hover, or click on the line; the background changes with hovering and selection,
-        making it easier read.<br />
-        (the dark background of UE5 makes it so much better)
-        <br /><br />
-    </p>
-</div>
+
 <h5 class="col-sm-12 px-5 d-flex">New functionalities:</h5>
 <div class="col-sm-12 px-3">
-    <p class="col-sm-12 px-5"><b>Dumping objects</b> - Well, C++ doesn't have reflection, so there is no way to dump
-        everything like the "vardump" from php
-        (yes, that's where I got the inspiration for this). So I'm thinking of a way of storing the references, as
-        pointers,
-        of a object dump properties so then could be updated easily.<br />
-        Something like VARDUMP(Object, objParameter1, objParameter2, DumpAddressOfSubObject1,
-        DumpAddressOfSubObject2)<br />
-        Then calling UPDATEDUMP(Object) to update all the tree.<br />
-        I hope this is possible. But if I manage to manipulate the pointers, then it leads to the next new
-        functionality:
+    <p class="col-sm-12 px-5">
+        <b>Extend the functionalities to blueprints</b> - As suggested on the plugin questions page on Epic Store,
+        I'll extend the functionalities for blueprints. I think this will greatly improve the number of people using the plugin.
         <br /><br />
-        <b>Updating by reference and VARWATCH</b> - Having pointers of the dumped variables, then there is no more
-        need to update using the name,
-        making it easier to update from various instances of a object. I already made this work, just have to solve
-        this for arrays.
-        The consequence of this, is the ability to make a VARWATCH macro that updates the values without the
-        necessity to call UPDATEDUMP.
+        <b>Value History</b> - I intend to generate a value history, so every time you update a dump, the old values will be stored,
+        becoming possible to see all the values assumed by a variable.
+        <br /><br />
+        <b>VARWATCH</b> - The VARWATCH macro will be a new macro that updates itself without the need to call the UPDATEDUMP
+        or UPDATEOBJECTDUMP. Won't generate a history though.
     </p>
 </div>
