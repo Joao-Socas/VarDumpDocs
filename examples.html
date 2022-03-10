@@ -1,16 +1,87 @@
 <h1 class="display-5 fw-bold col-12 text-start px-3" style="color: #4b0000;">Usage examples</h1>
 <div class="accordion px-3" id="accordionExamples">
 
+        <!-- ----------------------------------------------Dump BP Example----------------------------------------------------- -->
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed text-white bg-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Simple Dumps and Compatible Types for Blueprints
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExamples">
+                <div class="accordion-body">
+                    <div class="flex-row-reverse col-12 d-flex flex-wrap justify-content-center">
+                        <div class="col-lg-4 col-sm-12 py-2">
+                            <p>
+                                It's easy to dump any variable from the default types. Just link to the VarDump Node wildcard.
+                                Another one will be generated for multiple dumps.<br /><br />
+                                For now, only the types listed on the example, and arrays of these types are compatible<br />
+                                Objects, maps and sets are not supported yet.
+                            </p>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <a href="#" class="pop px-4"><img src="Images/ExamplesBlueprintDump.png"
+                                style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="95%"></a>
+                        </div>
+                    </div>
+    
+                    <div class="col-12 d-flex flex-row px-4 flex-wrap">
+                        <p class="col-12">The setup above produces the following output:</p>
+                        <a href="#" class="pop"><img src="Images/ExamplesBlueprintDumpResult.png"
+                                style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" class="col-12"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- ----------------------------------------------Update BP Example----------------------------------------------------- -->
+    
+        <div class="accordion-item">
+            <h2 class="accordion-header bg-dark" id="headingTwo">
+                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Updating Dumps on Blueprints
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExamples">
+                <div class="accordion-body">
+                    <div class="flex-row-reverse col-12 d-flex flex-wrap justify-content-center">
+                        <div class="col-lg-4 col-sm-12 py-2">
+                            <p>
+                                You can update any dump. Even from returns from a function, if what is returned is the same instance.<br /><br />
+                                In this example, the GetActorTransform is updated since what is returned has always the same memory address.<br />    
+                            </p>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <a href="#" class="pop px-4"><img src="Images/ExamplesBlueprintUpdate.png"
+                                style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="95%"></a>
+                        </div>
+                    </div>
+    
+                    <div class="col-12 d-flex flex-row px-4 flex-wrap">
+                        <p class="col-12">The setup above produces the following output:</p>
+                        <a href="#" class="pop"><img src="Images/ExamplesBlueprintUpdateResult.gif"
+                                style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" class="col-12"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
     <!-- ----------------------------------------------Dump Example----------------------------------------------------- -->
 
     <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
+        <h2 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed text-white bg-dark" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                Simple Dumps and Compatible Types
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
+                Simple Dumps and Compatible Types in C++
             </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
             data-bs-parent="#accordionExamples">
             <div class="accordion-body">
                 <div class="flex-row-reverse col-12 d-flex flex-wrap justify-content-center">
@@ -79,13 +150,13 @@ void AUsageExamples::<span class="nocode"><span class="method">BeginPlay()</span
     <!-- ----------------------------------------------Update Example----------------------------------------------------- -->
 
     <div class="accordion-item">
-        <h2 class="accordion-header bg-dark" id="headingTwo">
+        <h2 class="accordion-header bg-dark" id="headingFour">
             <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Updating Dumps
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Updating Dumps from C++
             </button>
         </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
             data-bs-parent="#accordionExamples">
             <div class="accordion-body">
                 <div class="flex-row-reverse col-12 d-flex flex-wrap justify-content-center">
@@ -152,13 +223,13 @@ void AUpdateExample::<span class="nocode"><span class="method">Tick</span></span
     <!-- ----------------------------------------------MultiInstance Example----------------------------------------------------- -->
 
     <div class="accordion-item">
-        <h2 class="accordion-header bg-dark" id="headingThree">
+        <h2 class="accordion-header bg-dark" id="headingFive">
             <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Multiple Instances
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Multiple Instances (C++)
             </button>
         </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
             data-bs-parent="#accordionExamples">
             <div class="accordion-body">
                 <div class="flex-row-reverse col-12 d-flex flex-wrap justify-content-center">
@@ -210,13 +281,13 @@ void AMultiObjectExample::<span class="nocode"><span class="method">Tick</span><
     <!-- ----------------------------------------------DumpObject Example------------------------------------------------------->
 
     <div class="accordion-item">
-        <h2 class="accordion-header bg-dark" id="headingFour">
+        <h2 class="accordion-header bg-dark" id="headingSix">
             <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Dumping a Object
+                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                Dumping a Object from C++
             </button>
         </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
             data-bs-parent="#accordionExamples">
             <div class="accordion-body">
                 <div class="flex-row-reverse col-12 d-flex flex-wrap justify-content-center">

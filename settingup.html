@@ -1,21 +1,65 @@
-<h1 class="display-5 fw-bold col-12 text-center py-2" style="color: #4b0000;">Easy 4 step setup</h1>
-    <div id="settingupcarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"
+<div class="col-12 flex-row d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-secondary btn-lg active mx-3 my-1" id="btn-setupBlueprint" style="padding: 0.8rem 1rem;" 
+        data-bs-target="#collapseblueprint" aria-current="true" data-bs-toggle="collapse" disabled>Setup for blueprint</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg mx-3 my-1" id="btn-setupCode" style="padding: 0.8rem 2rem;" 
+        data-bs-target="#collapsecode" data-bs-toggle="collapse">Setup for code</button>
+</div>
+
+<div class="col-12 collapse collapsecarousel show" id="collapseblueprint" data-bs-parent="#settingup">
+    <h2 class="display-6 fw-bold col-12 text-center py-2" style="color: #4b0000;">Easy 2 step setup for dumping from blueprints</h2>
+    <div id="settingupcarouselblueprint" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"
         style="padding-bottom: 25px;">
         <div class="carousel-indicators" style="margin-bottom: -1rem !important;">
-            <button type="button" data-bs-target="#settingupcarousel" data-bs-slide-to="0" class="active"
+            <button type="button" data-bs-target="#settingupcarouselblueprint" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1">1</button>
-            <button type="button" data-bs-target="#settingupcarousel" data-bs-slide-to="1"
+            <button type="button" data-bs-target="#settingupcarouselblueprint" data-bs-slide-to="1"
                 aria-label="Slide 2">2</button>
-            <button type="button" data-bs-target="#settingupcarousel" data-bs-slide-to="2"
+        </div>
+        <div class="carousel-inner px-5">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <a href="#" class="pop"><img src="Images/step1.png" class="d-block mx-lg-auto img-fluid my-2"
+                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="90%"
+                        alt="Step1"></a>
+                </div>
+                <div>
+                    <p class="text-center py-2"><b>Step 1:</b> Enable VarDump plugin on the editor Plugins and
+                        allow the editor to restart.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <a href="#" class="pop"><img src="Images/stepbp2.png" class="d-block mx-lg-auto img-fluid my-2"
+                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="90%"
+                        alt="Step4"></a>
+                </div>
+                <div>
+                    <p class="text-center py-2"><b>Step 2:</b> Start dumping!!!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12 collapse collapsecarousel" id="collapsecode" data-bs-parent="#settingup">
+    <h2 class="display-6 fw-bold col-12 text-center py-2" style="color: #4b0000;">Easy 4 step setup for dumping from code</h2>
+    <div id="settingupcarouselcode" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"
+        style="padding-bottom: 25px;">
+        <div class="carousel-indicators" style="margin-bottom: -1rem !important;">
+            <button type="button" data-bs-target="#settingupcarouselcode" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1">1</button>
+            <button type="button" data-bs-target="#settingupcarouselcode" data-bs-slide-to="1"
+                aria-label="Slide 2">2</button>
+            <button type="button" data-bs-target="#settingupcarouselcode" data-bs-slide-to="2"
                 aria-label="Slide 3">3</button>
-            <button type="button" data-bs-target="#settingupcarousel" data-bs-slide-to="3"
+            <button type="button" data-bs-target="#settingupcarouselcode" data-bs-slide-to="3"
                 aria-label="Slide 4">4</button>
         </div>
         <div class="carousel-inner px-5">
             <div class="carousel-item active">
                 <div class="d-flex justify-content-center">
                     <a href="#" class="pop"><img src="Images/step1.png" class="d-block mx-lg-auto img-fluid my-2"
-                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="100%"
+                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="90%"
                         alt="Step1"></a>
                 </div>
                 <div>
@@ -26,18 +70,18 @@
             <div class="carousel-item">
                 <div class="d-flex justify-content-center">
                     <a href="#" class="pop"><img src="Images/step2.png" class="d-block mx-lg-auto img-fluid my-2"
-                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="100%"
+                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="90%"
                         alt="Step2"></a>
                 </div>
                 <div>
                     <p class="text-center py-2"><b>Step 2:</b> Add "VarDump" to your project dependencies on
-                        YourProject.build.cs and YourProject.uproject</p>
+                        YourProject.build.cs</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="d-flex justify-content-center">
                     <a href="#" class="pop"><img src="Images/step3.png" class="d-block mx-lg-auto img-fluid my-2"
-                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="100%"
+                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="90%"
                         alt="Step3"></a>
                 </div>
                 <div>
@@ -49,7 +93,7 @@
             <div class="carousel-item">
                 <div class="d-flex justify-content-center">
                     <a href="#" class="pop"><img src="Images/step4.png" class="d-block mx-lg-auto img-fluid my-2"
-                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="100%"
+                        style="box-shadow: -6px -4px 4px rgb(0 0 0 / 14%); border-radius: 1%;" width="90%"
                         alt="Step4"></a>
                 </div>
                 <div>
@@ -58,3 +102,4 @@
             </div>
         </div>
     </div>
+</div>

@@ -37,6 +37,22 @@ function FinishedLoading()
       }
     });
 
+    $("#btn-setupBlueprint").click(function(){
+      $("#btn-setupCode").attr("disabled", false);
+      $("#btn-setupCode").removeClass("active");
+
+      $("#btn-setupBlueprint").attr("disabled", true);
+      $("#btn-setupBlueprint").addClass("active");
+    });
+
+    $("#btn-setupCode").click(function(){
+      $("#btn-setupBlueprint").attr("disabled", false);
+      $("#btn-setupBlueprint").removeClass("active");
+
+      $("#btn-setupCode").attr("disabled", true);
+      $("#btn-setupCode").addClass("active");
+    });
+
     $("#btn-send").click(function(){
       SubmitContact();
     });
@@ -140,7 +156,7 @@ function ScrollSpySet()
 {
   settingupposition = getOffsetTop(document.getElementById('settingup'));
   examplesposition = getOffsetTop(document.getElementById('examples'));
-  comingsoonposition = getOffsetTop(document.getElementById('comingsoon'));
+  roadmapposition = getOffsetTop(document.getElementById('roadmap'));
   contactposition = getOffsetTop(document.getElementById('contact'));
   ScrollSpy();
   SetNavLinks();
@@ -161,15 +177,15 @@ function ScrollSpy()
     $("#sidebar a").removeClass("active");
     $("#settinguplink").addClass("active");
   }
-  if (scrolloffset > examplesposition - offset && scrolloffset < comingsoonposition - offset) 
+  if (scrolloffset > examplesposition - offset && scrolloffset < roadmapposition - offset) 
   {
     $("#sidebar a").removeClass("active");
     $("#exampleslink").addClass("active");
   }
-  if (scrolloffset > comingsoonposition - offset && scrolloffset < contactposition - offset) 
+  if (scrolloffset > roadmapposition - offset && scrolloffset < contactposition - offset) 
   {
     $("#sidebar a").removeClass("active");
-    $("#comingsoonlink").addClass("active");
+    $("#roadmaplink").addClass("active");
   }
   if (scrolloffset > contactposition - offset) 
   {
@@ -183,7 +199,7 @@ function SetNavLinks()
   $("#homelink").off("click");
   $("#settinguplink").off("click");
   $("#exampleslink").off("click");
-  $("#comingsoonlink").off("click");
+  $("#roadmaplink").off("click");
   $("#contactlink").off("click");
 
   $("#homelink").click(function(event){
@@ -201,9 +217,9 @@ function SetNavLinks()
     $("main").stop().animate({scrollTop:examplesposition}, 500, 'swing');
   });
   
-  $("#comingsoonlink").click(function(event){
+  $("#roadmaplink").click(function(event){
     event.preventDefault();
-    $("main").stop().animate({scrollTop:comingsoonposition}, 500, 'swing');
+    $("main").stop().animate({scrollTop:roadmapposition}, 500, 'swing');
   });
   
   $("#contactlink").click(function(event){
@@ -247,7 +263,7 @@ $( document ).ready(function()
     $("#home").load("home.html", function(){
       $("#settingup").load("settingup.html", function(){
         $("#examples").load("examples.html", function(){
-          $("#comingsoon").load("comingsoon.html", function(){
+          $("#roadmap").load("roadmap.html", function(){
             $("#contact").load("contact.html", function(){
               mainloaded = true;
             });
