@@ -3,6 +3,7 @@ var mainloaded = false;
 var homeposition = 0;
 var settingupposition;
 var examplesposition;
+var keymappingsposition;
 var commingsoonposition;
 var contactposition;
 var bugcontact = true;
@@ -158,6 +159,7 @@ function ScrollSpySet()
   examplesposition = getOffsetTop(document.getElementById('examples'));
   roadmapposition = getOffsetTop(document.getElementById('roadmap'));
   contactposition = getOffsetTop(document.getElementById('contact'));
+  keymappingsposition = getOffsetTop(document.getElementById('keymappings'));
   ScrollSpy();
   SetNavLinks();
 }
@@ -177,10 +179,15 @@ function ScrollSpy()
     $("#sidebar a").removeClass("active");
     $("#settinguplink").addClass("active");
   }
-  if (scrolloffset > examplesposition - offset && scrolloffset < roadmapposition - offset) 
+  if (scrolloffset > examplesposition - offset && scrolloffset < keymappingsposition - offset) 
   {
     $("#sidebar a").removeClass("active");
     $("#exampleslink").addClass("active");
+  }
+  if (scrolloffset > keymappingsposition - offset && scrolloffset < roadmapposition - offset) 
+  {
+    $("#sidebar a").removeClass("active");
+    $("#keymappingslink").addClass("active");
   }
   if (scrolloffset > roadmapposition - offset && scrolloffset < contactposition - offset) 
   {
@@ -199,6 +206,7 @@ function SetNavLinks()
   $("#homelink").off("click");
   $("#settinguplink").off("click");
   $("#exampleslink").off("click");
+  $("#keymappingslink").off("click");
   $("#roadmaplink").off("click");
   $("#contactlink").off("click");
 
@@ -215,6 +223,11 @@ function SetNavLinks()
   $("#exampleslink").click(function(event){
     event.preventDefault();
     $("main").stop().animate({scrollTop:examplesposition}, 500, 'swing');
+  });
+
+  $("#keymappingslink").click(function(event){
+    event.preventDefault();
+    $("main").stop().animate({scrollTop:keymappingsposition}, 500, 'swing');
   });
   
   $("#roadmaplink").click(function(event){
@@ -263,9 +276,11 @@ $( document ).ready(function()
     $("#home").load("home.html", function(){
       $("#settingup").load("settingup.html", function(){
         $("#examples").load("examples.html", function(){
-          $("#roadmap").load("roadmap.html", function(){
-            $("#contact").load("contact.html", function(){
-              mainloaded = true;
+          $("#keymappings").load("keymappings.html", function(){
+            $("#roadmap").load("roadmap.html", function(){
+              $("#contact").load("contact.html", function(){
+                mainloaded = true;
+              });
             });
           });
         });
